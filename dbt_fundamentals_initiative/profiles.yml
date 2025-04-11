@@ -8,6 +8,6 @@ dbt_fundamentals_initiative:
       password: Postgres1
       port: 5432
       dbname: AdventureWorks
-      schema: tom_vandorpe
+      schema: Assignment1
       threads: 1
     

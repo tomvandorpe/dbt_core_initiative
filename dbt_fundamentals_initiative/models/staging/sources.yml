@@ -3,10 +3,12 @@ version: 2
 sources:
   - name: AdventureWorks
     database: AdventureWorks 
-    schema: sales_data  
+    schema: hr_data  
     tables:
-      - name: customer
-      - name: salesorderdetail
-      - name: salesorderheader
+      - name: department
+      - name: employee
+      - name: employeedepartmenthistory
+      - name: person
+      
 
 

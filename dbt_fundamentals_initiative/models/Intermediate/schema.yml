@@ -1,0 +1,48 @@
+
+version: 2
+
+models:
+  - name: int_employees
+    description: "Model that displays employee infrmation such as name, age and seniority category"
+    columns:
+      - name: businessentityid
+        description: "Unique Key for every employee"
+        data_tests:
+          - unique
+          - not_null
+      - name: org
+        description: "Key for the role of the employee within the organization"
+        tests:
+          - not_null:
+              config:
+                where: "organizationlevel != 0"
+      - name: organizationlevel
+        description: "Hierarchy level within the organization"
+        data_tests:
+          - accepted_values:
+              values: [0,1, 2, 3, 4]
+          - not_null
+      - name: birthdate
+        description: "The day the employee is born"
+        data_tests:
+          - not_null
+      - name: gender
+        description: "Gender of the employee"
+        data_tests:
+          - not_null
+      - name: hiredate
+        description: "First working day of the employee"
+        data_tests:
+          - not_null
+      - name: seniority_category
+        description: "Indicates the sneiority the employee has within the company"
+        data_tests:
+          - not_null
+      - name: age_in_years
+        description: "The age of the employee in years"
+        data_tests:
+          - not_null
+      - name: full_name
+        description: "The first and last name of the employee"
+        data_tests:
+          - not_null      

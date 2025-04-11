@@ -4,7 +4,9 @@ with employees as
        organizationlevel,
        birthdate,
        gender,
-       hiredate
+       hiredate,
+       {{ get_seniority_category('hiredate') }} AS seniority_category,
+       extract(year from age(cast('2014-01-01' as date), birthdate)) as age_in_years
 from {{ref("stg_employee")}} ),
 
 
@@ -21,6 +23,9 @@ employees_with_names as
        employees.birthdate,
        employees.gender,
        employees.hiredate,
+       employees.seniority_category,
+       employees.age_in_years,
+
        employee_names.full_name
  
 FROM employees

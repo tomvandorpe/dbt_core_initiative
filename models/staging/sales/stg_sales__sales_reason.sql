@@ -1,7 +1,7 @@
 with
 
 sales_reason as (
-    select * from {{ source('sales', 'sales_reason')}}
+    select * from {{ source('sales', 'sales_reason') }}
 ),
 
 final as (

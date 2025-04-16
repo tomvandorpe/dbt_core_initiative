@@ -7,7 +7,7 @@ sales_order_header_sales_reason as (
 final as (
     select
         salesorderid as sales_order_id,
-        sales_reason_id as sales_reason_id,
+        salesreasonid as sales_reason_id,
         modifieddate as modified_date
     from sales_order_header_sales_reason
 )

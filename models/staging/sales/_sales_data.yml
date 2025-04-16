@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: AdventureWorks
+  - name: sales
     database: AdventureWorks 
     schema: sales_data  
     tables:

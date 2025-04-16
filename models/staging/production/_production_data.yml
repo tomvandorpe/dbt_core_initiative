@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: AdventureWorks
+  - name: production
     database: AdventureWorks 
     schema: production_data  
     tables:

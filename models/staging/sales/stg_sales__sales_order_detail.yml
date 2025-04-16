@@ -1,0 +1,23 @@
+models:
+  - name: stg_sales__sales_order_detail
+    description: Order level informations about the sale.
+    columns:
+      - name: sales_order_id
+        description: "{{ doc('sales_order_id') }}" 
+        test:
+          - unique
+          - not_null
+      - name: sales_order_detail_id
+        description: "{{ doc('sales_order_detail_id') }}" 
+      - name: order_quantity
+        description: "{{ doc('order_quantity') }}" 
+      - name: product_id 
+        description: "{{ doc('product_id') }}" 
+      - name: special_offer_id 
+        description: "{{ doc('special_offer_id') }}" 
+      - name: unit_price 
+        description: "{{ doc('unit_price') }}" 
+      - name: unit_price_discount 
+        description: "{{ doc('unit_price_discount') }}" 
+      - name: line_total 
+        description: "{{ doc('line_total') }}" 

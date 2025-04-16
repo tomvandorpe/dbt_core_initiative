@@ -1,13 +1,22 @@
-{% macro get_seniority_category(hiredate_column) %}
-    case 
-        when {{ hiredate_column }} >= cast('2014-01-01' as date) - interval '1 year' then '< 1 year'
-        when {{ hiredate_column }} >= cast('2014-01-01' as date) - interval '2 years'
-             and {{ hiredate_column }} < cast('2014-01-01' as date) - interval '1 year' then '1 - 2 years'
-        when {{ hiredate_column }} >= cast('2014-01-01' as date) - interval '5 years'
-             and {{ hiredate_column }} < cast('2014-01-01' as date) - interval '2 years' then '2 - 5 years'
-        when {{ hiredate_column }} >= cast('2014-01-01' as date) - interval '10 years'
-             and {{ hiredate_column }} < cast('2014-01-01' as date) - interval '5 years' then '5 - 10 years'
-        when {{ hiredate_column }} < cast('2014-01-01' as date) - interval '10 years' then '> 10 years'
+{% macro get_seniority_category(hiredate_column, reference_date="cast('2014-01-01' as date)") %}
+    {% set intervals = [
+        (1, '< 1 year'),
+        (2, '1 - 2 years'),
+        (5, '2 - 5 years'),
+        (10, '5 - 10 years')
+    ] %}
+    
+    case
+        {% for i, label in intervals %}
+            {% if loop.first %}
+                when {{ hiredate_column }} >= {{ reference_date }} - interval '{{ i }} year' then '{{ label }}'
+            {% else %}
+                when {{ hiredate_column }} >= {{ reference_date }} - interval '{{ i }} years'
+                     and {{ hiredate_column }} < {{ reference_date }} - interval '{{ intervals[loop.index0 - 1][0] }} years' then '{{ label }}'
+            {% endif %}
+        {% endfor %}
+        when {{ hiredate_column }} < {{ reference_date }} - interval '10 years' then '> 10 years'
         else 'Unknown'
     end
 {% endmacro %}
+

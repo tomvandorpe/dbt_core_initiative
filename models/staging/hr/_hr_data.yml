@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+    database: AdventureWorks 
+    schema: hr_data  
+    tables:
+      - name: department
+        identifier: department
+      - name: employee
+        identifier: employee
+      - name: employee_department_history
+        identifier: employeedepartmenthistory
+      - name: person
+        identifier: person

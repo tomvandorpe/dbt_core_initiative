@@ -1,0 +1,23 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+    database: AdventureWorks 
+    schema: sales_data  
+    tables:
+      - name: customer
+        identifier: customer
+      - name: sales_order_detail
+        identifier: salesorderdetail
+      - name: sales_order_header
+        identifier: salesorderheader
+      - name: sales_order_header_sales_reason
+        identifier: salesorderheadersalesreason
+      - name: sales_person
+        identifier: salesperson
+      - name: sales_reason
+        identifier: salesreason
+      - name: sales_territory
+        identifier: salesterritory
+      - name: store
+        identifier: store

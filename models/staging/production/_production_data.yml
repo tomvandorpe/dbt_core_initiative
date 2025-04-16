@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+    database: AdventureWorks 
+    schema: production_data  
+    tables:
+      - name: bill_of_materials
+        identifier: billofmaterials
+      - name: culture
+        identifier: culture
+      - name: document
+        identifier: document
+      - name: product
+        identifier: product
+      - name: product_category
+        identifier: productcategory
+      - name: product_cost_history
+        identifier: productcosthistory
+      - name: product_document
+        identifier: productdocument
+      - name: product_inventory
+        identifier: productinventory
+      - name: product_list_pricehistory
+        identifier: productlistpricehistory
+      - name: product_model
+        identifier: productmodel
+      - name: product_ssubcategory
+        identifier: productsubcategory
+      - name: purchase_order_detail
+        identifier: purchaseorderdetail
+      - name: transaction_history
+        identifier: transactionhistory

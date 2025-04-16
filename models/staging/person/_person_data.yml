@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: AdventureWorks
+    database: AdventureWorks 
+    schema: person_data  
+    tables:
+      - name: address
+        identifier: address
+      - name: addresstype
+        identifier: addresstype
+      - name: business_entity
+        identifier: businessentity
+      - name: business_entity_address
+        identifier: businessentityaddress
+      - name: business_entity_contact
+        identifier: businessentitycontact
+      - name: contacttype
+        identifier: contact_type
+      - name: country_region
+        identifier: countryregion
+      - name: person_phone
+        identifier: personphone
+      - name: state_province
+        identifier: stateprovince

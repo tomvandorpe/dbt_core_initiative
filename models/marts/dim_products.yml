@@ -1,0 +1,20 @@
+models:
+  - name: dim_products
+    description: List of products with KPIs.
+    columns:
+      - name: product_id
+        description: "{{ doc('product_id') }}" 
+        tests:
+          - unique
+          - not_null
+      - name: quantity_ordered
+        description: "{{ doc('order_quantity') }}"
+      - name: min_unit_price
+        description: "{{ doc('min_unit_price') }}" 
+      - name: max_unit_price
+        description: "{{ doc('max_unit_price') }}" 
+      - name: min_unit_discount
+        description: "{{ doc('min_unit_discount') }}" 
+      - name: max_unit_discount  
+        description: "{{ doc('max_unit_discount') }}" 
+        

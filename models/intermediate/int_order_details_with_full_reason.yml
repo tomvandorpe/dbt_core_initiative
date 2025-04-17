@@ -1,0 +1,13 @@
+models:
+  - name: int_order_details_with_full_reason
+    description: Order level informations about the sale.
+    columns:
+      - name: sales_order_detail_id
+        description: "{{ doc('sales_order_detail_id') }}" 
+        tests:
+          - unique
+          - not_null
+      - name: sales_order_id
+        description: "{{ doc('sales_order_id') }}" 
+        tests:
+          - not_null

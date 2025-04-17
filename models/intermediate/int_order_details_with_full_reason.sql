@@ -29,15 +29,10 @@ final as (
         o.online_order_flag,
         o.sub_total,
         o.tax_amount,
-        o.total_due,
-        r.full_reason
+        o.total_due
     from order_details od
     left join orders o
         on o.sales_order_id = od.sales_order_id
-    left join order_reasons ore
-        on ore.sales_order_id = od.sales_order_id
-    left join reasons r
-        on r.sales_reason_id = ore.sales_reason_id
 )
 
 select * from final

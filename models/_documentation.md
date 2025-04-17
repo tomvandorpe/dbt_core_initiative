@@ -1,4 +1,9 @@
-# ids
+# sales
+
+## ids
+{% docs sk_sale %}
+Surrogate key the product sale.
+{% enddocs %}
 
 {% docs sales_order_id %}
 Unique identifier of an order.
@@ -16,23 +21,36 @@ Unique identifier of a product.
 Unique identifier of a special offer.
 {% enddocs %}
 
-# sale information
+
+## information
 {% docs order_quantity %}
 Quantity sold.
 {% enddocs %}
 
 {% docs unit_price %}
-Unit price of a product..
+Unit price of a product.
+{% enddocs %}
+
+{% docs min_unit_price %}
+Minimum price of a product sold over a period.
+{% enddocs %}
+
+{% docs max_unit_price %}
+Maximum price of a product sold over a period.
 {% enddocs %}
 
 {% docs unit_price_discount %}
 Unit price discount.
 {% enddocs %}
 
-{% docs unit_price_discount %}
-Unit price discount.
+{% docs min_unit_discount %}
+Minimum price of a product discount applied over a period.
+{% enddocs %}
+
+{% docs max_unit_discount %}
+Maximum price of a product discount applied over a period.
 {% enddocs %}
 
 {% docs line_total %}
-Unit price discount.
+Total amount.
 {% enddocs %}

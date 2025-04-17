@@ -4,11 +4,13 @@ models:
     columns:
       - name: sales_order_id
         description: "{{ doc('sales_order_id') }}" 
-        test:
-          - unique
+        tests:
           - not_null
       - name: sales_order_detail_id
         description: "{{ doc('sales_order_detail_id') }}" 
+        tests:
+          - unique
+          - not_null
       - name: order_quantity
         description: "{{ doc('order_quantity') }}" 
       - name: product_id 

@@ -6,7 +6,6 @@ sources:
     schema: sales_data  
     tables:
       - name: customer
-      - name: salesorderdetail
-      - name: salesorderheader
+    
 
 

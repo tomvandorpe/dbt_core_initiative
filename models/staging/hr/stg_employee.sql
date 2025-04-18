@@ -1,3 +1,8 @@
+with employee as(
+    select *
+    from {{ source('AdventureWorks', 'employee') }}
+)
+
 SELECT businessentityid,
        cast(nationalidnumber as integer) as nationalidnumber,
        org,
@@ -11,4 +16,4 @@ SELECT businessentityid,
        sickleavehours,
        modifieddate
 
-from {{ source('AdventureWorks', 'employee') }}
+FROM employee

@@ -6,18 +6,20 @@ models:
     description: "department and Business Unit table"
     columns:
       - name: departmentid
-        description: "The primary key for this table"
+        description: "{{ doc('department_id') }}"
         data_tests:
           - unique
           - not_null
       - name: department_name
+        description: "{{ doc('department_name') }}"
         data_tests:
           - unique
           - not_null
       - name: business_unit
+        description: "{{ doc('business_unit') }}"
         data_tests:
           - not_null
       - name: modifieddate
-        description: "Last date the entry is modified"
+        description: "{{ doc('modifieddate') }}"
         data_tests:
           - not_null  
